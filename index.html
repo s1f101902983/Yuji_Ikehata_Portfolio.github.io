@@ -8,10 +8,19 @@
   <link rel="stylesheet" href="css/index.css">
   <script src="js/script.js"></script>
   <script src="js/smooth-scroll.polyfills.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.0/smooth-scroll.min.js"></script>
 
 </head>
 
 <body>
+  <script>
+var scroll = new SmoothScroll('a[href*="#"]', {
+speedAsDuration:true,
+speed:1000,
+easing:'easeInOutQuint' // イージングも使えるよ！
+});
+</script>
+  
   <!-- header -->
   <header class="header">
     <!-- ヘッダーロゴ -->
@@ -30,9 +39,9 @@
       <nav class="nav_content">
         <ul class="nav_list">
           <li class="nav_item"><a href="index.html" >HOME</a></li>
-          <li class="nav_item"><a href="#About">About</a></li>
-          <li class="nav_item"><a href="#Works" >Works</a></li>
-          <li class="nav_item"><a href="#Contact" >Contact</a></li>
+          <li class="nav_item"><a href="#About" data-scroll>About</a></li>
+          <li class="nav_item"><a href="#Works" data-scroll>Works</a></li>
+          <li class="nav_item"><a href="#Contact" data-scroll>Contact</a></li>
         </ul>
       </nav>
 
@@ -47,7 +56,7 @@
 
 
   <main>
-    <a id="About" class="anchor"></a>
+    <a id="About" class="anchor" data-scroll></a>
     <h2 class="Category" >About me</h2>
     <div id="container1">
       <!-- コンテナ -->
@@ -103,7 +112,7 @@
       </div> <!-- アイテム -->
     </div><!-- About me ここまで -->
 
-    <a id="Works" class="anchor"></a>
+    <a id="Works" class="anchor" data-scroll></a>
 
     <h2 class="Category">Works</h2>
 
@@ -246,7 +255,7 @@
 
     <!-- Contact -->
 
-    <a id="Contact" class="anchor"></a>
+    <a id="Contact" class="anchor" data-scroll></a>
     <h2 class="Category">Contact</h2>
       <p class="mail">下記メールアドレスまでご連絡ください。</p>
       <p class="mail">Mail: s1f101902983@iniad.org</p>
