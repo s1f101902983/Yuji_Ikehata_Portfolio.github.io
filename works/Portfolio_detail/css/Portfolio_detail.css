@@ -1,0 +1,1145 @@
+@charset "UTF-8";
+
+@media screen and (max-width:768px) {
+    /*スマホmaxは、768pxより狭い場合適用*/
+
+    html {
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        /**/
+        background: black;
+    }
+
+    body {
+        margin: 0;
+        margin-top: 15%;
+    }
+
+
+    /* CSSコード */
+    .header {
+        width: 100%;
+        /* 幅いっぱいを指定 */
+
+
+        display: flex;
+        /* 中の要素を横並びにする */
+        justify-content: center;
+
+        /* padding: 20px 50px;ヘッダーに上下左右それぞれ余白を指定 */
+        align-items: center;
+        /* 中の要素を上下中央に並べる */
+
+        box-sizing: border-box;
+        /* padding分を含んで幅を100%にするため */
+
+        background-color: #1B1F49;
+        position: fixed;
+        /* ウィンドウを基準に画面に固定 */
+
+        top: 0;
+        /* 上下の固定位置を上から0pxにする */
+        left: 0;
+        /* 左右の固定位置を左から0pxにする */
+    }
+
+    .logo {
+        font-size: 24px;
+        color: #F35DF3;
+        padding: 3%;
+    }
+
+    /* ここから下がハンバーガーメニューに関するCSS */
+
+    /* チェックボックスを非表示にする */
+    .drawer_hidden {
+        display: none;
+    }
+
+    /* ハンバーガーアイコンの設置スペース */
+    .drawer_open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 20px;
+        z-index: 100;
+        /* 重なり順を一番上にする */
+        cursor: pointer;
+    }
+
+    /* ハンバーガーメニューのアイコン */
+    .drawer_open span,
+    .drawer_open span:before,
+    .drawer_open span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background: white;
+        transition: 0.5s;
+        position: absolute;
+    }
+
+    /* 三本線の一番上の棒の位置調整 */
+    .drawer_open span:before {
+        bottom: 8px;
+    }
+
+    /* 三本線の一番下の棒の位置調整 */
+    .drawer_open span:after {
+        top: 8px;
+    }
+
+    /* アイコンがクリックされたら真ん中の線を透明にする */
+    #drawer_input:checked~.drawer_open span {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #drawer_input:checked~.drawer_open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #drawer_input:checked~.drawer_open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* メニューのデザイン*/
+    .nav_content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0%;
+        left: 100%;
+        /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: rgb(110, 110, 110);
+        transition: .5s;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    /* メニュー黒ポチを消す */
+    .nav_list {
+        list-style: none;
+    }
+
+    .nav_item a {
+
+        color: #fff;
+        text-decoration: none;
+
+    }
+
+    li.nav_item {
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+
+    /* アイコンがクリックされたらメニューを表示 */
+    #drawer_input:checked~.nav_content {
+        left: 0;
+        /* メニューを画面に入れる */
+
+    }
+
+    /* heder終わり */
+
+    /* main */
+
+    /* title_container */
+    #top_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 280px 160px;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "my_portfolio "
+            " title ";
+
+    }
+
+    /* アイテム */
+    #my_portfolio {
+        grid-area: my_portfolio;
+        padding: 5%;
+        /**/
+        background: #050A28;
+    }
+
+    #title {
+        grid-area: title;
+        padding: 5%;
+        /**/
+        background: #050A28;
+    }
+
+    h1.title {
+        margin-top: 5%;
+        text-align: center;
+        font-size: 100%;
+        /* */
+        color: #fff;
+    }
+
+    h2.title {
+        text-align: center;
+        font-size: 80%;
+        /* */
+        color: #fff;
+    }
+
+
+
+
+
+    .neon_border2 {
+        margin-top: 20px;
+        width: 270px;
+        height: 180px;
+
+        padding: 5px;
+        box-shadow:
+            -1px -1px 0px 1px #fff,
+            1px -1px 0px 1px#fff,
+            1px 1px 0px 1px#fff,
+            -1px 1px 0px 1px#fff,
+            0 0 .5em #FF00FF,
+            0 0 .5em #F35DF3 inset,
+            0 0 .8em #FF00FF,
+            0 0 .8em #F35DF3 inset,
+            0 0 2em #FF00FF,
+            0 0 5em #F35DF3 inset;
+
+        /*各サムネイルの中央揃え*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* 概要 */
+
+    h2.heading {
+        text-align: left;
+        font-size: 90%;
+        margin-top: 3%;
+        margin-left: 7%;
+        /* */
+        color: #fff;
+    }
+
+    p.article {
+        text-align: left;
+        font-size: 60%;
+        margin-left: 7%;
+        margin-right: 7%;
+        line-height: 150%;
+        /* */
+        color: #fff;
+    }
+
+    br {
+        display: none;
+    }
+
+    /*作品そのもの（画面遷移図）*/
+
+    #work_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 70px 1380px;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            " heading1 "
+            " work1 ";
+        /* */
+        background: #050A28;
+    }
+
+    #heading1 {
+        grid-area: heading1;
+        padding: 5%;
+        background: #050A28;
+    }
+
+    #work1 {
+        grid-area: work1;
+        padding-top: 0%;
+        padding-left: 5%;
+        text-align: center;
+        /**/
+        background: #050A28;
+    }
+
+    #work2 {
+        display: none;
+        grid-area: work2;
+        padding-top: 0%;
+        padding-left: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    img.all_screen {
+        width: 270px;
+        height: 1272px;
+    }
+
+    p.screen_title {
+        text-align: left;
+        font-size: 70%;
+        margin-left: 15%;
+        margin-right: 7%;
+        margin-bottom: 7%;
+        /* */
+        color: #fff;
+    }
+
+
+    /* 構成コンテンツ */
+    #Constitution_container {
+        padding: 1% 0% 1%;
+        background: #050A28;
+
+    }
+
+    /* 途中制作物コンテンツ */
+
+    #sketch_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 230px 150px;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            " sketch_heading "
+            " sketch "
+            " sketch_article ";
+    }
+
+    #sketch_heading {
+        grid-area: sketch_heading;
+        padding: 5%;
+    }
+
+    #sketch {
+        grid-area: sketch;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #sketch_article {
+        grid-area: sketch_article;
+        padding: 5%;
+        /*background: #050A28;*/
+    }
+
+    img.sketch {
+        width: 260px;
+        height: 190px;
+    }
+
+    /* デザインコンセプトコンテンツ */
+    #design_concept {
+        padding: 1% 0% 1%;
+        background: #050A28;
+    }
+
+    /* ムードボードコンテンツ */
+
+    #moodboad_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 250px 130px;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            " moodboad_heading "
+            " moodboad "
+            " moodboad_article ";
+    }
+
+    #moodboad_heading {
+        grid-area: moodboad_heading;
+        padding: 5%;
+    }
+
+    #moodboad {
+        grid-area: moodboad;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #moodboad_article {
+        grid-area: moodboad_article;
+        padding: 5%;
+        /*background: #050A28;*/
+    }
+
+    img.moodboad {
+        width: 260px;
+        height: 225px;
+    }
+
+
+    /* 使用ツール コンテンツ */
+    #using_tool {
+        padding: 1% 0% 0.5%;
+        background: #050A28;
+
+    }
+
+
+
+
+
+
+    /* footer */
+    footer {
+        padding: 1%;
+        background-color: #1B1F49;
+    }
+
+    p#copyright {
+        text-align: center;
+        font-size: 10%;
+        color: #fff;
+    }
+
+
+}
+
+/*----------------------------------ここからtabletモニターの記述-----------*/
+@media screen and (min-width: 768px)and (max-width:1024px) {
+
+    html {
+        font-size: 34px;
+        font-family: Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        /**/
+        background: black;
+    }
+
+    body {
+        margin: 0;
+        padding-top: 50px;
+    }
+
+    header {
+        width: 100%;
+        /* 幅いっぱいを指定 */
+        height: 50px;
+        /* 高さを50pxに指定 */
+        background: #1B1F49;
+        /* 背景色にグレーを指定 */
+        padding: 20px 50px;
+        /* ヘッダーに上下左右それぞれ余白を指定 */
+        box-sizing: border-box;
+        /* padding分を含んで幅を100%にするため */
+        position: fixed;
+        /* ウィンドウを基準に画面に固定 */
+        top: 0;
+        /* 上下の固定位置を上から0pxにする */
+        left: 0;
+        /* 左右の固定位置を左から0pxにする */
+        display: flex;
+        /* 中の要素を横並びにする */
+        align-items: center;
+        /* 中の要素を上下中央に並べる */
+    }
+
+    header .nav_content .nav_list {
+        display: flex;
+        /* 中の要素を横並びにする */
+    }
+
+    header .nav_content .nav_list li {
+        list-style: none;
+        /* リストの[・]を消す */
+    }
+
+    header .nav_content .nav_list li+li {
+        margin-left: 10%;
+        /* メニューそれぞれに間隔をあけるため */
+    }
+
+    main {
+        height: 100vw;
+        /* スクロールの演出を見れるようにmainに高さを指定 */
+    }
+
+
+    .logo {
+        text-align: left;
+        font-size: 24px;
+        color: #F35DF3;
+        padding: 1.5%;
+        margin-left: 1.5%;
+    }
+
+    input#drawer_input.drawer_hidden {
+        display: none;
+    }
+
+
+
+    nav.nav_content {
+        text-align: right;
+    }
+
+
+    div.nav_list {
+        display: inline-block;
+        position: relative;
+
+    }
+
+
+    /* メニュー黒ポチを消す */
+    ul.nav_list {
+        list-style: none;
+        display: flex;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: right;
+    }
+
+    .nav_item a {
+        font-size: 24px;
+        display: flex;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    nav li {
+        margin: auto;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+
+    nav li:hover {
+        color: #03e9f4;
+        border-bottom: 3px solid #03e9f4;
+    }
+
+    /* heder終わり */
+
+    /* main */
+
+    /* title_container */
+    #top_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 300px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "my_portfolio title ";
+
+    }
+
+    /* アイテム */
+    #my_portfolio {
+        grid-area: my_portfolio;
+        padding: 5%;
+        /**/
+        background: #050A28;
+    }
+
+    #title {
+        grid-area: title;
+        padding: 5%;
+        /**/
+        background: #050A28;
+    }
+
+    h1.title {
+        margin-top: 25%;
+        text-align: center;
+        font-size: 80%;
+        /* */
+        color: #fff;
+    }
+
+    h2.title {
+        text-align: center;
+        font-size: 60%;
+        /* */
+        color: #fff;
+    }
+
+
+
+
+    .neon_border2 {
+        margin-top: 20px;
+        width: 300px;
+        height: 210px;
+
+        padding: 5px;
+        box-shadow:
+            -1px -1px 0px 1px #fff,
+            1px -1px 0px 1px#fff,
+            1px 1px 0px 1px#fff,
+            -1px 1px 0px 1px#fff,
+            0 0 .5em #FF00FF,
+            0 0 .5em #F35DF3 inset,
+            0 0 .8em #FF00FF,
+            0 0 .8em #F35DF3 inset,
+            0 0 2em #FF00FF,
+            0 0 5em #F35DF3 inset;
+
+        /*各サムネイルの中央揃え*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 概要 */
+
+    h2.heading {
+        text-align: left;
+        font-size: 90%;
+        margin-left: 7%;
+        margin-top: 3%;
+        /* */
+        color: #fff;
+    }
+
+    p.article {
+        text-align: left;
+        font-size: 60%;
+        margin-left: 7%;
+        margin-right: 7%;
+        line-height: 150%;
+        /* */
+        color: #fff;
+    }
+
+    /*作品そのもの（画面遷移図）*/
+
+    #work_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 2180px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            " heading1 ....."
+            " work1  work2";
+        /* */
+        background: #050A28;
+    }
+
+    #heading1 {
+        grid-area: heading1;
+        padding: 5%;
+    }
+
+    #work1 {
+        grid-area: work1;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #work2 {
+        grid-area: work2;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    p.screen_title {
+        text-align: left;
+        font-size: 70%;
+        margin-left: 15%;
+        margin-right: 7%;
+        margin-bottom: 7%;
+        /* */
+        color: #fff;
+    }
+
+
+    /* 構成コンテンツ */
+    #Constitution_container {
+        padding: 1% 0% 1%;
+        background: #050A28;
+
+    }
+
+
+    /* 途中制作物コンテンツ */
+
+    #sketch_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 370px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            " sketch_heading ....."
+            " sketch  sketch_article";
+    }
+
+    #sketch_heading {
+        grid-area: sketch_heading;
+        padding: 5%;
+    }
+
+    #sketch {
+        grid-area: sketch;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #sketch_article {
+        grid-area: sketch_article;
+        padding: 5%;
+        /*background: #050A28;*/
+    }
+
+    img.sketch {
+        width: 260px;
+        height: 190px;
+    }
+
+
+    /* デザインコンセプトコンテンツ */
+    #design_concept {
+        padding: 1% 0% 1%;
+        background: #050A28;
+    }
+
+    /* ムードボードコンテンツ */
+
+    #moodboad_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 400px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            " moodboad_heading ....."
+            " moodboad  moodboad_article";
+    }
+
+    #moodboad_heading {
+        grid-area: moodboad_heading;
+        padding: 5%;
+    }
+
+    #moodboad {
+        grid-area: moodboad;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #moodboad_article {
+        grid-area: moodboad_article;
+        padding: 5%;
+        /*background: #050A28;*/
+    }
+
+
+    /* 使用ツール コンテンツ */
+    #using_tool {
+        padding: 1% 0% 0.5%;
+        background: #050A28;
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /* footer */
+    footer {
+        padding: 1%;
+        background-color: #1B1F49;
+    }
+
+    p#copyright {
+        text-align: center;
+        font-size: 10%;
+        color: #fff;
+    }
+}
+
+/*----------------------------------ここからPCモニターの記述-----------*/
+@media screen and (min-width: 1024px) {
+
+
+    html {
+        font-size: 34px;
+        font-family: Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        /**/
+        background: black;
+    }
+
+    body {
+        margin: 0;
+        padding-top: 50px;
+    }
+
+    header {
+        width: 100%;
+        /* 幅いっぱいを指定 */
+        height: 50px;
+        /* 高さを50pxに指定 */
+        background: #1B1F49;
+        /* 背景色にグレーを指定 */
+        padding: 20px 50px;
+        /* ヘッダーに上下左右それぞれ余白を指定 */
+        box-sizing: border-box;
+        /* padding分を含んで幅を100%にするため */
+        position: fixed;
+        /* ウィンドウを基準に画面に固定 */
+        top: 0;
+        /* 上下の固定位置を上から0pxにする */
+        left: 0;
+        /* 左右の固定位置を左から0pxにする */
+        display: flex;
+        /* 中の要素を横並びにする */
+        align-items: center;
+        /* 中の要素を上下中央に並べる */
+    }
+
+    header .nav_content .nav_list {
+        display: flex;
+        /* 中の要素を横並びにする */
+    }
+
+    header .nav_content .nav_list li {
+        list-style: none;
+        /* リストの[・]を消す */
+    }
+
+    header .nav_content .nav_list li+li {
+        margin-left: 40%;
+        /* メニューそれぞれに間隔をあけるため */
+    }
+
+    main {
+        height: 100vw;
+        /* スクロールの演出を見れるようにmainに高さを指定 */
+    }
+
+
+    .logo {
+        text-align: left;
+        font-size: 24px;
+        color: #F35DF3;
+        padding: 1.5%;
+        margin-left: 1.5%;
+    }
+
+    input#drawer_input.drawer_hidden {
+        display: none;
+    }
+
+
+
+    nav.nav_content {
+        text-align: right;
+    }
+
+
+    div.nav_list {
+        display: inline-block;
+        position: relative;
+
+    }
+
+
+    /* メニュー黒ポチを消す */
+    ul.nav_list {
+        list-style: none;
+        display: flex;
+        margin-left: 30%;
+        margin-right: 10%;
+        text-align: right;
+    }
+
+    .nav_item a {
+        font-size: 24px;
+        display: flex;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    nav li {
+        margin: auto;
+        padding-right: 20%;
+        padding-left: 20%;
+    }
+
+
+    nav li:hover {
+        color: #03e9f4;
+        border-bottom: 3px solid #03e9f4;
+    }
+
+    /* heder終わり */
+
+    /* main */
+
+    /* title_container */
+    #top_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 350px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "my_portfolio title ";
+
+    }
+
+    /* アイテム */
+    #my_portfolio {
+        grid-area: my_portfolio;
+        padding: 5%;
+        /**/
+        background: #050A28;
+    }
+
+    #title {
+        grid-area: title;
+        padding: 5%;
+        /**/
+        background: #050A28;
+
+    }
+
+    h1.title {
+        margin-top: 15%;
+        text-align: center;
+        font-size: 100%;
+        /* */
+        color: #fff;
+    }
+
+    h2.title {
+        text-align: center;
+        font-size: 80%;
+        /* */
+        color: #fff;
+    }
+
+
+    .neon_border2 {
+        margin-top: 20px;
+        width: 300px;
+        height: 210px;
+
+        padding: 5px;
+        box-shadow:
+            -1px -1px 0px 1px #fff,
+            1px -1px 0px 1px#fff,
+            1px 1px 0px 1px#fff,
+            -1px 1px 0px 1px#fff,
+            0 0 .5em #FF00FF,
+            0 0 .5em #F35DF3 inset,
+            0 0 .8em #FF00FF,
+            0 0 .8em #F35DF3 inset,
+            0 0 2em #FF00FF,
+            0 0 5em #F35DF3 inset;
+
+        /*各サムネイルの中央揃え*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 概要 */
+    h2.heading {
+        text-align: left;
+        font-size: 100%;
+        margin-top: 3%;
+        margin-left: 7%;
+        /* */
+        color: #fff;
+    }
+
+    p.article {
+        text-align: left;
+        font-size: 70%;
+        margin-left: 7%;
+        margin-right: 7%;
+        line-height: 150%;
+        margin-bottom: 7%;
+        /* */
+        color: #fff;
+    }
+
+    /*作品そのもの（画面遷移図）*/
+
+    #work_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 2180px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            " heading1 ....."
+            " work1  work2";
+        /* */
+        background: #050A28;
+    }
+
+    #heading1 {
+        grid-area: heading1;
+        padding: 5%;
+    }
+
+    #work1 {
+        grid-area: work1;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #work2 {
+        grid-area: work2;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    p.screen_title {
+        text-align: left;
+        font-size: 70%;
+        margin-left: 15%;
+        margin-right: 7%;
+        margin-bottom: 7%;
+        /* */
+        color: #fff;
+    }
+
+    /* 構成コンテンツ */
+    #Constitution_container {
+        padding: 1% 0% 1%;
+        background: #050A28;
+
+    }
+
+    /* 途中制作物コンテンツ */
+
+    #sketch_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 370px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            " sketch_heading ....."
+            " sketch  sketch_article";
+    }
+
+    #sketch_heading {
+        grid-area: sketch_heading;
+        padding: 5%;
+    }
+
+    #sketch {
+        grid-area: sketch;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #sketch_article {
+        grid-area: sketch_article;
+        padding: 5%;
+        /*background: #050A28;*/
+    }
+
+
+    /* デザインコンセプトコンテンツ */
+    #design_concept {
+        padding: 1% 0% 1%;
+        background: #050A28;
+    }
+
+
+    /* ムードボードコンテンツ */
+
+    #moodboad_container {
+        display: grid;
+        /* グリッドレイアウト */
+
+        grid-template-rows: 100px 400px;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            " moodboad_heading ....."
+            " moodboad  moodboad_article";
+    }
+
+    #moodboad_heading {
+        grid-area: moodboad_heading;
+        padding: 5%;
+    }
+
+    #moodboad {
+        grid-area: moodboad;
+        padding: 5%;
+        text-align: center;
+        /*background: #050A28;*/
+    }
+
+    #moodboad_article {
+        grid-area: moodboad_article;
+        padding: 5%;
+        /*background: #050A28;*/
+    }
+
+
+    /* 使用ツール コンテンツ */
+    #using_tool {
+        padding: 1% 0% 0.5%;
+        background: #050A28;
+
+    }
+
+
+
+
+
+
+
+
+
+    /* footer */
+    footer {
+        padding: 1%;
+        background-color: #1B1F49;
+    }
+
+    p#copyright {
+        text-align: center;
+        font-size: 10%;
+        color: #fff;
+    }
+
+
+}
