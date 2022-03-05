@@ -93,6 +93,8 @@
     /* 上下の固定位置を上から0pxにする */
     left: 0;
     /* 左右の固定位置を左から0pxにする */
+	  
+    z-index: 100;  /* heder回り込みバグ直し*/
   }
 
   .logo {
@@ -515,6 +517,9 @@
   .neon_border2:hover {
 	  cursor: pointer;
 	  transform: scale(1.1, 1.1);
+	  /* heder回り込みバグ直し*/
+	  position:  relative;        /* 位置指定 */
+          z-index: -1;  
   }
   
   p.work_title{
@@ -591,6 +596,8 @@
     /* 中の要素を横並びにする */
     align-items: center;
     /* 中の要素を上下中央に並べる */
+	  
+	  z-index: 100;  /* heder回り込みバグ直し*/
   }
 
   header .nav_content .nav_list {
@@ -970,6 +977,9 @@ ul.use_skill{
   .neon_border2:hover {
 	  cursor: pointer;
 	  transform: scale(1.1, 1.1);
+	  /* heder回り込みバグ直し*/
+	  position:  relative;        /* 位置指定 */
+          z-index: -1;  
   }
 	
 	
@@ -1047,6 +1057,9 @@ p#copyright{
     /* 中の要素を横並びにする */
     align-items: center;
     /* 中の要素を上下中央に並べる */
+	  
+　　　/* heder回り込みバグ直し*/  
+     z-index: 1;  
   }
 
   header .nav_content .nav_list {
@@ -1428,6 +1441,9 @@ ul.use_skill{
 .neon_border2:hover {
 	cursor: pointer;
 	transform: scale(1.1, 1.1);
+	/* heder回り込みバグ直し*/
+	  position:  relative;        /* 位置指定 */
+          z-index: -1;  
 }
 
 p.work_title{
